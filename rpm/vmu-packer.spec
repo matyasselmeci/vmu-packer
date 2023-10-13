@@ -1,6 +1,6 @@
 Summary: Scripts for using packer for making VMU images
 Name: vmu-packer
-Version: 1.11.0
+Version: 1.11.1
 Release: 1%{?dist}
 License: Apache 2.0
 Source0: %{name}-%{version}.tar.gz
@@ -31,6 +31,9 @@ echo '{"password":"ENTER PASSWORD HERE"}' > %{buildroot}/etc/%{name}/password.js
 %dir /var/log/%{name}
 
 %changelog
+* Fri Oct 13 2023 Mátyás Selmeci <matyas@cs.wisc.edu> - 1.11.1-1
+- Ask for machine-readable output from packer
+
 * Wed Oct 11 2023 Mátyás Selmeci <matyas@cs.wisc.edu> - 1.11.0-1
 - Add gh_runner image
 
