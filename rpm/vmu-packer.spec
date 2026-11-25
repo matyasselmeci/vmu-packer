@@ -1,6 +1,6 @@
 Summary: Scripts for using packer for making VMU images
 Name: vmu-packer
-Version: 1.17.0
+Version: 1.18.0
 Release: 1%{?dist}
 License: Apache 2.0
 Source0: %{name}-%{version}.tar.gz
@@ -59,12 +59,15 @@ echo '{"password":"ENTER PASSWORD HERE"}' > %{buildroot}/etc/%{name}/password.js
 %dir /var/log/%{name}
 
 %changelog
+* Wed Nov 25 2026 Matyas Selmeci <mselmeci@wisc.edu> - 1.18.0-1
+- Add Matt to the list of people who get emailed about image generation
+
 * Mon Jul 20 2026 Matt Westphall <westphall@wisc.edu> - 1.17.0-1
 - Preserve locally modified per-arch template files (kickstart.ks, vars.json) on upgrade via %config(noreplace)
 - Add vmu-packer-update.timer, a systemd timer that daily at midnight refreshes /usr/share/vmu-packer/ from the upstream git repository
 - Add vmu-packer.timer, a systemd timer that runs vmu-rebuild-all once per week
 
-* Tue Jul 08 2026 Matt Westphall <westphall@wisc.edu> - 1.16.4-1
+* Wed Jul 08 2026 Matt Westphall <westphall@wisc.edu> - 1.16.4-1
 - Update EL10 images to latest
     - AlmaLinux 10 to 10.2
     - Rocky 10 to 10.2
